@@ -283,7 +283,7 @@ const Portfolio = () => {
                   'Leverages Multi-threading to speed up the Monte Carlo simulation',
                   'Direct comparison between analytical and simulated results'
                 ],
-                image: '/path/to/image1.jpg'
+                image: 'mc_pricer.jpg'
               },
               {
                 id: 2,
@@ -295,7 +295,7 @@ const Portfolio = () => {
                   'Simulates random order generation to mimic real-time trading activity.',
                   'Automatically triggers stop orders based on the last trade price.',
                 ],
-                image: '/path/to/image2.jpg'
+                image: 'orderbook.jpg'
               },
               {
                 id: 3,
@@ -307,23 +307,23 @@ const Portfolio = () => {
                   'The dashboard allows real-time updates to the Black-Scholes model parameters',
                   'Set custom ranges for Spot Price and Volatility to generate a comprehensive view of option prices under different market conditions',
                 ],
-                image: '/path/to/image3.jpg'
+                image: "webapp.jpg"
               },
               {
                 id: 4,
                 title: 'My personal portfolio Web App',
-                description: 'This project provides an interactive Black-Scholes Option Pricing Model Web App that helps in visualizing option prices under varying conditions',
+                description: 'This project showcases my journey as a passionate C++ Software Developer with expertise in building efficient, scalable solutions. It highlights my professional experience, key projects, and a range of technical skills',
                 details: [
                   'A detailed overview of my roles and responsibilities in software development using responsive design',
                   'A comprehensive display of my expertise in various programming languages, frameworks with visual indicators of proficiency',
                   'Insight into the useful personal projects I have worked on, demonstrating my ability to deliver robust solutions.',
                   'The web app is hosted on GitHub Pages, ensuring reliable and free hosting. It leverages automatic deployment through GitHub Actions',
                 ],
-                image: '/path/to/image3.jpg'
+                image: "title.jpg"
               }
             ].map((project) => (
               <Box key={project.id} p={6} bg={cardBg} shadow="md" rounded="lg" _hover={{ shadow: 'lg' }}>
-                <Image src={project.image} alt={project.title} borderRadius="md" mb="4" />
+                <Image src={project.image} alt={project.title} height={300} width={500} borderRadius="md" mb="4" />
                 <Heading as="h3" size="md" mb={4}>{project.title}</Heading>
                 <Text color={activeTabBg} mb={4}>{project.description}</Text>
                 <Stack as="ul" spacing={2} pl={5} color="gray.400" listStyleType="disc">
