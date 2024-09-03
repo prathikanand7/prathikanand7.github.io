@@ -1,2 +1,2 @@
-# prathikanand7.github.io
-My portfolio
+# Resume
+[My portfolio](https://prathikanand7.github.io/)
