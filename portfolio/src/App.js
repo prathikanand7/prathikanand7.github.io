@@ -283,7 +283,7 @@ const Portfolio = () => {
                   'Leverages Multi-threading to speed up the Monte Carlo simulation',
                   'Direct comparison between analytical and simulated results'
                 ],
-                image: 'mc_pricer.jpg'
+                image: '/mc_pricer.jpg'
               },
               {
                 id: 2,
@@ -295,7 +295,7 @@ const Portfolio = () => {
                   'Simulates random order generation to mimic real-time trading activity.',
                   'Automatically triggers stop orders based on the last trade price.',
                 ],
-                image: 'orderbook.jpg'
+                image: '/orderbook.jpg'
               },
               {
                 id: 3,
@@ -307,7 +307,7 @@ const Portfolio = () => {
                   'The dashboard allows real-time updates to the Black-Scholes model parameters',
                   'Set custom ranges for Spot Price and Volatility to generate a comprehensive view of option prices under different market conditions',
                 ],
-                image: "webapp.jpg"
+                image: "/webapp.jpg"
               },
               {
                 id: 4,
@@ -319,7 +319,7 @@ const Portfolio = () => {
                   'Insight into the useful personal projects I have worked on, demonstrating my ability to deliver robust solutions.',
                   'The web app is hosted on GitHub Pages, ensuring reliable and free hosting. It leverages automatic deployment through GitHub Actions',
                 ],
-                image: "title.jpg"
+                image: "/title_port.jpg"
               }
             ].map((project) => (
               <Box key={project.id} p={6} bg={cardBg} shadow="md" rounded="lg" _hover={{ shadow: 'lg' }}>
