@@ -10,14 +10,18 @@ import {
   Button,
   Container,
   useColorModeValue,
+  IconButton,
 } from '@chakra-ui/react';
+import { Github, Globe } from 'lucide-react';
 import { BsChevronUp, BsChevronDown } from 'react-icons/bs';
 
+
 const ProjectDetails = ({colorMode}) => {
-   const cardBg = useColorModeValue('#ECEAE5', 'rgba(31, 41, 55, 1)'); // Background for cards (you can replace this with dynamic values)
-   const cardTextColor = useColorModeValue('#2e2e2e', 'whiteAlpha.900'); // Text color for light/dark mode
+  const cardBg = useColorModeValue('#ECEAE5', 'rgba(31, 41, 55, 1)'); // Background for cards (you can replace this with dynamic values)
+  const cardTextColor = useColorModeValue('#2e2e2e', 'whiteAlpha.900'); // Text color for light/dark mode
   const activeTabBg = useColorModeValue('#888888', 'whiteAlpha.600');
   const shadowColor = useColorModeValue('lg', 'dark-lg');
+  const buttonHoverBg = useColorModeValue( '#cbd5e0', 'whiteAlpha.200');
 
   // Project data
   const projects = [
@@ -31,6 +35,7 @@ const ProjectDetails = ({colorMode}) => {
         'Leverages Multi-threading to speed up the Monte Carlo simulation',
         'Direct comparison between analytical and simulated results'
       ],
+      href: 'https://github.com/prathikanand7/Quant-Finance-Tools/tree/main/VanillaVision_TwinPricingEngine',
       image: '/mc_pricer.jpg'
     },
     {
@@ -43,6 +48,7 @@ const ProjectDetails = ({colorMode}) => {
         'Simulates random order generation to mimic real-time trading activity.',
         'Automatically triggers stop orders based on the last trade price.',
       ],
+      href: 'https://github.com/prathikanand7/Frontend-development-coursera/tree/main/Advanced-React-Portfolio-Projects-Coursera--main',
       image: '/orderbook.jpg'
     },
     {
@@ -55,6 +61,7 @@ const ProjectDetails = ({colorMode}) => {
         'The dashboard allows real-time updates to the Black-Scholes model parameters',
         'Set custom ranges for Spot Price and Volatility to generate a comprehensive view of option prices under different market conditions',
       ],
+      href: 'https://black-scholes-option-pricing-modeller.streamlit.app/',
       image: '/webapp.jpg'
     },
     {
@@ -67,6 +74,7 @@ const ProjectDetails = ({colorMode}) => {
         'Insight into the useful personal projects I have worked on, demonstrating my ability to deliver robust solutions.',
         'The web app is hosted on GitHub Pages, ensuring reliable and free hosting. It leverages automatic deployment through GitHub Actions',
       ],
+      href: 'https://prathikanand7.github.io/',
       image: '/title_port.jpg'
     }
   ];
@@ -91,7 +99,18 @@ const ProjectDetails = ({colorMode}) => {
             <Image src={project.image} alt={project.title} height={250} width={450} borderRadius="md" mb="4" />
             <Heading as="h3" size="md" mb={4}>{project.title}</Heading>
             <Text color={activeTabBg} mb={4}>{project.description}</Text>
-
+            <IconButton
+                as="a"
+                href={project.href}
+                icon={(project.id === 1 || project.id === 2) ?<Github /> : <Globe />}
+                aria-label="Github"
+                variant="outline"
+                _hover={{ bg: buttonHoverBg }}
+                shadow={shadowColor}
+                target="_blank"
+                rel="noopener noreferrer"
+                mb={2}
+                />
             {/* Toggle Button and Collapse */}
             <Box>
               <Button
