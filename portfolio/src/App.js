@@ -21,6 +21,7 @@ import { BsSun as SunIcon, BsMoon as MoonIcon, BsChevronRight as ChevronRightIco
 import { Phone, Github, Linkedin, Mail, Twitter, Download } from 'lucide-react';
 import WorkExperience from './components/WorkExperience';
 import ProjectDetails from './components/ProjectDetails';
+import AboutSection from './components/AboutSection';
 
 
 const SkillBar = ({ level }) => {
@@ -64,7 +65,7 @@ const Portfolio = () => {
       <Box as="header" bg={cardBg} color={cardTextColor} shadow="md" py={4}>
         <Container maxW="container.lg">
           <Flex justify="space-between" align="center">
-            <Heading size="lg">Prathik Anand Krishnan</Heading>
+            <Heading size="lg">Prathik's Profile</Heading>
             <Flex align="center">
               <Stack direction="row" spacing={4} mr={4}>
                 {['About', 'Resume', 'Projects', 'Contact'].map((item) => (
@@ -97,6 +98,9 @@ const Portfolio = () => {
 
       <Container maxW="container.lg" py={10}>
         {/* Resume tab with hero-style About Me card */}
+        {activeTab === 'about' && (
+          <AboutSection/>
+        )}
         {activeTab === 'resume' && (
           <Stack spacing={6}>
             <Box p={6} bg={cardBg} shadow="md" rounded="lg" _hover={{ shadow: shadowColor }}>
@@ -104,7 +108,7 @@ const Portfolio = () => {
                 {/* Left: Picture */}
                 <Box flex="1">
                   <Image
-                    src="/my_pic.jpg"
+                    src="/pro_pic.jpg"
                     alt="Prathik Anand Krishnan"
                     borderRadius="lg"
                     boxSize="200px"
@@ -131,6 +135,7 @@ const Portfolio = () => {
                       rel="noopener noreferrer" // Security measure when using target="_blank"
                       mr={4}
                       _hover={{ bg: buttonHoverBg }}
+                      shadow={shadowColor}
                     />
                     <IconButton
                       as="a"
@@ -142,6 +147,7 @@ const Portfolio = () => {
                       rel="noopener noreferrer"
                       mr={4}
                       _hover={{ bg: buttonHoverBg }}
+                      shadow={shadowColor}
                     />
                     <IconButton
                       as="a"
@@ -153,6 +159,7 @@ const Portfolio = () => {
                       rel="noopener noreferrer"
                       mr={4}
                       _hover={{ bg: buttonHoverBg }}
+                      shadow={shadowColor}
                     />
                     <IconButton
                       as="a"
@@ -164,6 +171,7 @@ const Portfolio = () => {
                       rel="noopener noreferrer"
                       mr={4}
                       _hover={{ bg: buttonHoverBg }}
+                      shadow={shadowColor}
                     />
                     <IconButton
                       as="a"
@@ -174,6 +182,7 @@ const Portfolio = () => {
                       target="_blank" // Opens in a new tab
                       rel="noopener noreferrer" // Security measure when using target="_blank"
                       mr={4}
+                      shadow={shadowColor}
                     />
                   </Flex>
                 </Box>
@@ -190,7 +199,7 @@ const Portfolio = () => {
                 , where I contribute to the development of Oasys Structural Suite. My work centers on developing the pre-processing and post-processing API layers for Finite Element Analysis and Design software.
                 <br />
                 <br />
-                Beyond the office, I'm fueled by a relentless drive to engineer and learn about the robust solutions that could help push the boundaries of the trading industry.
+                Beyond the office, I'm fueled by a great desire to engineer and learn more about the robust solutions that are applied in the trading industry to help push the boundaries.
               </Text>
             </Box>
 
@@ -386,6 +395,7 @@ const Portfolio = () => {
                 variant="outline" mr={4}
                 target="_blank"
                 rel="noopener noreferrer"
+                shadow={shadowColor}
                 _hover={{ bg: buttonHoverBg }} />
               <IconButton
                 as="a"
@@ -396,6 +406,7 @@ const Portfolio = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 mr={4}
+                shadow={shadowColor}
                 _hover={{ bg: buttonHoverBg }} />
               <IconButton
                 as="a"
@@ -405,7 +416,9 @@ const Portfolio = () => {
                 variant="outline"
                 target="_blank" // Opens in a new tab
                 rel="noopener noreferrer" // Security measure when using target="_blank"
-                mr={4} _hover={{ bg: buttonHoverBg }} />
+                mr={4}
+                shadow={shadowColor}
+                _hover={{ bg: buttonHoverBg }} />
               <IconButton
                 as="a"
                 href="callto:+91-9003939327"
@@ -415,6 +428,7 @@ const Portfolio = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 mr={4}
+                shadow={shadowColor}
                 _hover={{ bg: buttonHoverBg }} />
               <IconButton
                 as="a"
@@ -425,6 +439,7 @@ const Portfolio = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 mr={4}
+                shadow={shadowColor}
                 _hover={{ bg: buttonHoverBg }} />
             </Flex>
           </Box>

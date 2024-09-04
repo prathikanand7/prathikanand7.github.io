@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Heading, Text, Stack, Flex, Collapse, IconButton, useColorModeValue, Spacer, Image } from '@chakra-ui/react';
+import { Box, Heading, Text, Stack, Flex, Collapse, IconButton, useColorModeValue, Spacer, Image, Link } from '@chakra-ui/react';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 
 const WorkExperience = () => {
@@ -42,9 +42,10 @@ const WorkExperience = () => {
           </Flex>
           <Collapse in={isOpenArup} animateOpacity>
             <Box mt={4} pl={6}>
-              <Text>• Worked on an API design architecture and modularised old C++ code base to modern standards</Text>
-              <Text>• Test driven development using Catch2 and Google testing frameworks to design reusable and reliable code</Text>
-              <Text>• Front-end development of sidebar and dialog boxes using Vue 3, HTML/CSS and JS</Text>
+              <Text>• Worked on two C++ feature development for {' '} <Link href="https://www.oasys-software.com/products/gsa/suite/"  isExternal color="blue.600" fontWeight="bold" >Oasys - GSA</Link> - Finite Element Analysis and Design Software</Text>
+              <Text>• Mostly working on backend MFC C++ APIs following TDD and have delivered around 60+ JIRA tickets with 97% code-coverage </Text>
+              <Text>• Utilized Test-Driven Development (TDD) with Catch2 and Google Test frameworks to design robust, reusable, and reliable code</Text>
+              <Text>• Developed the front-end for sidebars and dialog boxes using Vue, HTML/CSS, and JavaScript</Text>
             </Box>
           </Collapse>
         </Box>
@@ -78,9 +79,9 @@ const WorkExperience = () => {
           </Flex>
           <Collapse in={isOpenAtkins} animateOpacity>
             <Box mt={4} pl={6}>
-              <Text>• Worked on an API design architecture and modularised old C++ code base to modern standards</Text>
-              <Text>• Test driven development using Catch2 and Google testing frameworks to design reusable and reliable code</Text>
-              <Text>• Front-end development of sidebar and dialog boxes using Vue 3, HTML/CSS and JS</Text>
+              <Text>• Python + Tkinter tool to draw, analyse, design and show results of Retaining Walls, had a adoption rate of 70%</Text>
+              <Text>• Astrid tool (HTML/CSS) - I was part of the QA/QC team, reported around 7 critical bugs and improved the UI</Text>
+              <Text>• RMS Project Management Interface PowerBI Tool - Improved overall project efficiency by 40%</Text>
             </Box>
           </Collapse>
         </Box>
