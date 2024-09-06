@@ -48,7 +48,7 @@ const ProjectDetails = ({colorMode}) => {
         'Simulates random order generation to mimic real-time trading activity.',
         'Automatically triggers stop orders based on the last trade price.',
       ],
-      href: 'https://github.com/prathikanand7/Frontend-development-coursera/tree/main/Advanced-React-Portfolio-Projects-Coursera--main',
+      href: 'https://github.com/prathikanand7/Quant-Finance-Tools/tree/main/order_book',
       image: '/orderbook.jpg'
     },
     {
