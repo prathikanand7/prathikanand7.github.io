@@ -151,7 +151,7 @@ const Portfolio = () => {
                     />
                     <IconButton
                       as="a"
-                      href="https://github.com"
+                      href="https://github.com/prathikanand7"
                       icon={<Github />}
                       aria-label="Github"
                       variant="outline"
@@ -163,7 +163,7 @@ const Portfolio = () => {
                     />
                     <IconButton
                       as="a"
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/prathik-anand"
                       icon={<Linkedin />}
                       aria-label="Linkedin"
                       variant="outline"
