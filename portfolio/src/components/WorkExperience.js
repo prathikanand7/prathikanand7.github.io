@@ -6,6 +6,7 @@ const WorkExperience = () => {
   // States to control the collapse for each job
   const [isOpenArup, setIsOpenArup] = useState(false);
   const [isOpenAtkins, setIsOpenAtkins] = useState(false);
+  const [isOpenInfosys, setIsOpenInfosys] = useState(false);
   const cardBg = useColorModeValue('#ECEAE5', 'rgba(31, 41, 55, 1)');
   const shadowColor = useColorModeValue('lg', 'dark-lg');
 
@@ -82,6 +83,40 @@ const WorkExperience = () => {
               <Text>• Python + Tkinter tool to draw, analyse, design and show results of Retaining Walls, had a adoption rate of 70%</Text>
               <Text>• Astrid tool (HTML/CSS) - I was part of the QA/QC team, reported around 7 critical bugs and improved the UI</Text>
               <Text>• RMS Project Management Interface PowerBI Tool - Improved overall project efficiency by 40%</Text>
+            </Box>
+          </Collapse>
+        </Box>
+        {/* Job 3: INFOSYS */}
+        <Box>
+          <Flex justify="space-between" align="center">
+            <Box>
+                <Image
+                  src="/infosys.jpg"
+                  alt="ARUP"
+                  borderRadius="lg"
+                  boxSize="50px"
+                  objectFit="cover"
+                mr={4}
+              />
+            </Box>
+            <Box>
+              <Heading as="h3" size="md" mb={2}>Systems Engineer</Heading>
+              <Text>INFOSYS</Text>
+            </Box>
+            <Spacer />
+            <Text color="gray.500" mr={4}>Feb - Jul 2018</Text>
+            <IconButton
+              icon={isOpenInfosys ? <BsChevronUp /> : <BsChevronDown />}
+              size={"sm"}
+              variant="ghost"
+              aria-label="Toggle INFOSYS Details"
+              onClick={() => setIsOpenInfosys(!isOpenInfosys)}
+            />
+          </Flex>
+          <Collapse in={isOpenInfosys} animateOpacity>
+            <Box mt={4} pl={6}>
+              <Text>• Learnt Python, DSA, MySQL and did a mini project to build an e-commerce console application</Text>
+              <Text>• Learrnt basics of C#</Text>
             </Box>
           </Collapse>
         </Box>
