@@ -65,8 +65,8 @@ const Portfolio = () => {
       <Box as="header" bg={cardBg} color={cardTextColor} shadow="md" py={4}>
         <Container maxW="container.lg">
           <Flex justify="space-between" align="center">
-            <Heading size="lg">Prathik's Profile</Heading>
-            <Flex align="center">
+            <Heading size={{ base: 'md', md: 'lg' }}>Prathik's Profile</Heading>
+            <Flex align="center" display={{ base: 'none', md: 'flex' }}>
               <Stack direction="row" spacing={4} mr={4}>
                 {['About', 'Resume', 'Projects', 'Contact'].map((item) => (
                   <Button
@@ -175,7 +175,7 @@ const Portfolio = () => {
                     />
                     <IconButton
                       as="a"
-                      href="/Prathik_Anand_Resume_sept_2024.pdf"
+                      href="/Prathik_Anand_Resume_oct_2024.pdf"
                       icon={<Download />}
                       aria-label="Download Resume"
                       variant="outline"
