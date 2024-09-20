@@ -16,12 +16,14 @@ import {
   useColorMode,
   useColorModeValue,
   useDisclosure,
+  useToast,
 } from '@chakra-ui/react';
 import { BsSun as SunIcon, BsMoon as MoonIcon, BsChevronRight as ChevronRightIcon, BsSquareFill, BsSquareHalf, BsSquare, BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import { Phone, Github, Linkedin, Mail, Twitter, Download } from 'lucide-react';
 import WorkExperience from './components/WorkExperience';
 import ProjectDetails from './components/ProjectDetails';
 import AboutSection from './components/AboutSection';
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
 
 const SkillBar = ({ level }) => {
@@ -41,6 +43,7 @@ const SkillBar = ({ level }) => {
 const Portfolio = () => {
 
 // Disclosure hook for toggling foldable boxes
+  const { isOpen: isMenuOpen, onOpen: onMenuOpen, onClose: onMenuClose } = useDisclosure();
   const { isOpen, onToggle } = useDisclosure();
 
   const { colorMode, toggleColorMode } = useColorMode('dark');
@@ -55,6 +58,24 @@ const Portfolio = () => {
   const buttonHoverBg = useColorModeValue('#cbd5e0', 'whiteAlpha.200');
   const shadowColor = useColorModeValue('lg', 'dark-lg');
 
+  const CopyPhoneButton = () => {
+  const toast = useToast(); // Initialize useToast hook
+
+  const handleCopyPhoneNumber = () => {
+    navigator.clipboard.writeText("+91-9003939327"); // Copy phone number to clipboard
+    toast({
+      title: "Phone number copied.",
+      description: "+91-9003939327 has been copied to your clipboard.",
+      status: "success",
+      duration: 1500,
+      isClosable: true,
+      position: "bottom",
+    });
+  };
+  return <IconButton icon={<Phone />} aria-label="Copy Phone Number" variant="outline" mr={4} _hover={{ bg: buttonHoverBg }} shadow={shadowColor} onClick={handleCopyPhoneNumber} />;
+};
+
+
   return (
     <Box
       minH="100vh"
@@ -65,7 +86,9 @@ const Portfolio = () => {
       <Box as="header" bg={cardBg} color={cardTextColor} shadow="md" py={4}>
         <Container maxW="container.lg">
           <Flex justify="space-between" align="center">
+            {/* Responsive Heading */}
             <Heading size={{ base: 'md', md: 'lg' }}>Prathik's Profile</Heading>
+            {/* Desktop Navigation */}
             <Flex align="center" display={{ base: 'none', md: 'flex' }}>
               <Stack direction="row" spacing={4} mr={4}>
                 {['About', 'Resume', 'Projects', 'Contact'].map((item) => (
@@ -92,7 +115,39 @@ const Portfolio = () => {
                 _hover={{ bg: buttonHoverBg }}
               />
             </Flex>
+            {/* Mobile Navigation (Hamburger Menu) */}
+          <IconButton
+            aria-label="Open Menu"
+            icon={isMenuOpen ? <CloseIcon /> : <HamburgerIcon />}
+            display={{ base: 'flex', md: 'none' }}
+            onClick={isMenuOpen ? onMenuClose : onMenuOpen}
+            variant="outline"
+          />
           </Flex>
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+          <Box display={{ base: 'block', md: 'none' }} mt={4}>
+            <Stack spacing={4}>
+              {['About', 'Resume', 'Projects', 'Contact'].map((item) => (
+                <Button
+                  key={item}
+                  variant="ghost"
+                  onClick={() =>
+                    setActiveTab(item.toLowerCase()) & onMenuClose()}
+                  bg={activeTab === item.toLowerCase() ? activeTabBg : undefined}
+                  color={activeTab === item.toLowerCase() ? activeTabColor : 'gray.500'}
+                  _hover={{ bg: buttonHoverBg }}
+                  width="100%"
+                >
+                  {item}
+                </Button>
+              ))}
+              <Button onClick={toggleColorMode} variant="outline" width="100%">
+                {colorMode === 'light' ? <SunIcon color="black" /> : <MoonIcon />}
+              </Button>
+            </Stack>
+          </Box>
+        )}
         </Container>
       </Box>
 
@@ -104,9 +159,13 @@ const Portfolio = () => {
         {activeTab === 'resume' && (
           <Stack spacing={6}>
             <Box p={6} bg={cardBg} shadow="md" rounded="lg" _hover={{ shadow: shadowColor }}>
-              <Flex align="center" justify="space-between" mb={6}>
+              <Flex
+                direction={{ base: 'column', md: 'row' }}
+                align="center"
+                justify="space-between"
+                mb={6}>
                 {/* Left: Picture */}
-                <Box flex="1">
+                <Box flex="1" mb={{ base: 4, md: 0 }}>
                   <Image
                     src="/pro_pic.jpg"
                     alt="Prathik Anand Krishnan"
@@ -116,7 +175,7 @@ const Portfolio = () => {
                   />
                 </Box>
                 {/* Right: Contact info and About */}
-                <Box flex="3" pl={6}>
+                <Box flex="3" pl={{ base: 0, md: 6 }} textAlign={{ base: "center", md: "left" }}>
                   <Heading as="h1" size="xl" mb={4}>
                     Prathik Anand Krishnan
                   </Heading>
@@ -124,19 +183,8 @@ const Portfolio = () => {
                     C++ Software Developer
                   </Heading>
 
-                  <Flex justify="flex-start" mb={6} >
-                    <IconButton
-                      as="a"
-                      href="callto:+91-9003939327"
-                      icon={<Phone />}
-                      aria-label="Call"
-                      variant="outline"
-                      target="_blank" // Opens in a new tab
-                      rel="noopener noreferrer" // Security measure when using target="_blank"
-                      mr={4}
-                      _hover={{ bg: buttonHoverBg }}
-                      shadow={shadowColor}
-                    />
+                  <Flex justify={{ base: "center", md: "flex-start" }} mb={6} wrap="wrap" >
+                    <CopyPhoneButton/>
                     <IconButton
                       as="a"
                       href="mailto:prathikanand7@gmail.com"
@@ -419,17 +467,7 @@ const Portfolio = () => {
                 mr={4}
                 shadow={shadowColor}
                 _hover={{ bg: buttonHoverBg }} />
-              <IconButton
-                as="a"
-                href="callto:+91-9003939327"
-                icon={<Phone />}
-                aria-label="Call"
-                variant="outline"
-                target="_blank"
-                rel="noopener noreferrer"
-                mr={4}
-                shadow={shadowColor}
-                _hover={{ bg: buttonHoverBg }} />
+              <CopyPhoneButton/>
               <IconButton
                 as="a"
                 href="https://x.com/prathikanand7"
