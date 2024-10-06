@@ -44,9 +44,11 @@ const WorkExperience = () => {
           <Collapse in={isOpenArup} animateOpacity>
             <Box mt={4} pl={6}>
               <Text>• Worked on two C++ feature development for {' '} <Link href="https://www.oasys-software.com/products/gsa/suite/"  isExternal color="blue.600" fontWeight="bold" >Oasys - GSA</Link> - Finite Element Analysis and Design Software</Text>
-              <Text>• Mostly working on backend MFC C++ APIs following TDD and have delivered around 60+ JIRA tickets with 97% code-coverage </Text>
+              <Text>• Worked on Backend C++ development for a high performance MFC application, implementing Custom UI features and successfully delivered 60+ JIRA tickets, enhancing overall application functionality and user experience. </Text>
               <Text>• Utilized Test-Driven Development (TDD) with Catch2 and Google Test frameworks to design robust, reusable, and reliable code</Text>
               <Text>• Developed the front-end for sidebars and dialog boxes using Vue, HTML/CSS, and JavaScript</Text>
+              <Text>• Currently developing a C++ static library SDK to facilitate seamless integration and enhance interoperability between two proprietary applications.</Text>
+              <Text>• Leveraging the Abstract Factory Design Pattern to develop the SDK and streamlined its deployment as a NuGet package. Implemented the Steel Thread concept to ensure robust end-to-end system visualization and functionality</Text>
             </Box>
           </Collapse>
         </Box>
