@@ -42,7 +42,7 @@ const SkillBar = ({ level }) => {
 
 const Portfolio = () => {
 
-// Disclosure hook for toggling foldable boxes
+  // Disclosure hook for toggling foldable boxes
   const { isOpen: isMenuOpen, onOpen: onMenuOpen, onClose: onMenuClose } = useDisclosure();
   const { isOpen, onToggle } = useDisclosure();
 
@@ -59,21 +59,21 @@ const Portfolio = () => {
   const shadowColor = useColorModeValue('lg', 'dark-lg');
 
   const CopyPhoneButton = () => {
-  const toast = useToast(); // Initialize useToast hook
+    const toast = useToast(); // Initialize useToast hook
 
-  const handleCopyPhoneNumber = () => {
-    navigator.clipboard.writeText("+91-9003939327"); // Copy phone number to clipboard
-    toast({
-      title: "Phone number copied.",
-      description: "+91-9003939327 has been copied to your clipboard.",
-      status: "success",
-      duration: 1500,
-      isClosable: true,
-      position: "bottom",
-    });
+    const handleCopyPhoneNumber = () => {
+      navigator.clipboard.writeText("+91-9003939327"); // Copy phone number to clipboard
+      toast({
+        title: "Phone number copied.",
+        description: "+91-9003939327 has been copied to your clipboard.",
+        status: "success",
+        duration: 1500,
+        isClosable: true,
+        position: "bottom",
+      });
+    };
+    return <IconButton icon={<Phone />} aria-label="Copy Phone Number" variant="outline" mr={4} _hover={{ bg: buttonHoverBg }} shadow={shadowColor} onClick={handleCopyPhoneNumber} />;
   };
-  return <IconButton icon={<Phone />} aria-label="Copy Phone Number" variant="outline" mr={4} _hover={{ bg: buttonHoverBg }} shadow={shadowColor} onClick={handleCopyPhoneNumber} />;
-};
 
 
   return (
@@ -116,45 +116,45 @@ const Portfolio = () => {
               />
             </Flex>
             {/* Mobile Navigation (Hamburger Menu) */}
-          <IconButton
-            aria-label="Open Menu"
-            icon={isMenuOpen ? <CloseIcon /> : <HamburgerIcon />}
-            display={{ base: 'flex', md: 'none' }}
-            onClick={isMenuOpen ? onMenuClose : onMenuOpen}
-            variant="outline"
-          />
+            <IconButton
+              aria-label="Open Menu"
+              icon={isMenuOpen ? <CloseIcon /> : <HamburgerIcon />}
+              display={{ base: 'flex', md: 'none' }}
+              onClick={isMenuOpen ? onMenuClose : onMenuOpen}
+              variant="outline"
+            />
           </Flex>
           {/* Mobile Menu */}
           {isMenuOpen && (
-          <Box display={{ base: 'block', md: 'none' }} mt={4}>
-            <Stack spacing={4}>
-              {['About', 'Resume', 'Projects', 'Contact'].map((item) => (
-                <Button
-                  key={item}
-                  variant="ghost"
-                  onClick={() =>
-                    setActiveTab(item.toLowerCase()) & onMenuClose()}
-                  bg={activeTab === item.toLowerCase() ? activeTabBg : undefined}
-                  color={activeTab === item.toLowerCase() ? activeTabColor : 'gray.500'}
-                  _hover={{ bg: buttonHoverBg }}
-                  width="100%"
-                >
-                  {item}
+            <Box display={{ base: 'block', md: 'none' }} mt={4}>
+              <Stack spacing={4}>
+                {['About', 'Resume', 'Projects', 'Contact'].map((item) => (
+                  <Button
+                    key={item}
+                    variant="ghost"
+                    onClick={() =>
+                      setActiveTab(item.toLowerCase()) & onMenuClose()}
+                    bg={activeTab === item.toLowerCase() ? activeTabBg : undefined}
+                    color={activeTab === item.toLowerCase() ? activeTabColor : 'gray.500'}
+                    _hover={{ bg: buttonHoverBg }}
+                    width="100%"
+                  >
+                    {item}
+                  </Button>
+                ))}
+                <Button onClick={toggleColorMode} variant="outline" width="100%">
+                  {colorMode === 'light' ? <SunIcon color="black" /> : <MoonIcon />}
                 </Button>
-              ))}
-              <Button onClick={toggleColorMode} variant="outline" width="100%">
-                {colorMode === 'light' ? <SunIcon color="black" /> : <MoonIcon />}
-              </Button>
-            </Stack>
-          </Box>
-        )}
+              </Stack>
+            </Box>
+          )}
         </Container>
       </Box>
 
       <Container maxW="container.lg" py={10}>
         {/* Resume tab with hero-style About Me card */}
         {activeTab === 'about' && (
-          <AboutSection/>
+          <AboutSection />
         )}
         {activeTab === 'resume' && (
           <Stack spacing={6}>
@@ -184,7 +184,7 @@ const Portfolio = () => {
                   </Heading>
 
                   <Flex justify={{ base: "center", md: "flex-start" }} mb={6} wrap="wrap" >
-                    <CopyPhoneButton/>
+                    <CopyPhoneButton />
                     <IconButton
                       as="a"
                       href="mailto:prathikanand7@gmail.com"
@@ -223,7 +223,7 @@ const Portfolio = () => {
                     />
                     <IconButton
                       as="a"
-                      href="/Prathik_Anand_Krishnan_quant_dev_resume.pdf"
+                      href="/Prathik_Anand_nov_resume.pdf"
                       icon={<Download />}
                       aria-label="Download Resume"
                       variant="outline"
@@ -252,29 +252,29 @@ const Portfolio = () => {
             </Box>
 
             <Box p={6} bg={cardBg} shadow="md" rounded="lg" _hover={{ shadow: shadowColor }}>
-                <Heading as="h2" size="lg" mb={10}>Skills</Heading>
+              <Heading as="h2" size="lg" mb={10}>Skills</Heading>
 
-                <Box mb={6}>
-                  <Heading as="h3" size="md" mb={2}>Languages</Heading>
-                  <SimpleGrid columns={{ sm: 1, md: 3 }} spacing={2}>
-                    {[
-                      { name: 'C/C++', level: 4 },
-                      { name: 'Shell', level: 3 },
-                      { name: 'JavaScript', level: 3.5 },
-                      { name: 'Python', level: 3.5 },
-                      { name: 'MATLAB', level: 2 },
-                      { name: 'HTML/CSS', level: 4 },
-                      { name: 'C#', level: 2 },
-                      { name: 'Assembly Language', level: 1.5 },
-                    ].map((skill) => (
-                      <Flex key={skill.name} justify="space-between" align="center" mr={10}>
-                        <Text ml={1} >
-                          {skill.name}
-                        </Text>
-                        <SkillBar level={skill.level}  />
-                      </Flex>
-                    ))}
-                  </SimpleGrid>
+              <Box mb={6}>
+                <Heading as="h3" size="md" mb={2}>Languages</Heading>
+                <SimpleGrid columns={{ sm: 1, md: 3 }} spacing={2}>
+                  {[
+                    { name: 'C/C++', level: 4 },
+                    { name: 'Shell', level: 3 },
+                    { name: 'JavaScript', level: 3.5 },
+                    { name: 'Python', level: 3.5 },
+                    { name: 'MATLAB', level: 2 },
+                    { name: 'HTML/CSS', level: 4 },
+                    { name: 'C#', level: 2 },
+                    { name: 'Assembly Language', level: 1.5 },
+                  ].map((skill) => (
+                    <Flex key={skill.name} justify="space-between" align="center" mr={10}>
+                      <Text ml={1} >
+                        {skill.name}
+                      </Text>
+                      <SkillBar level={skill.level} />
+                    </Flex>
+                  ))}
+                </SimpleGrid>
               </Box>
               <Link
                 onClick={onToggle}
@@ -286,7 +286,7 @@ const Portfolio = () => {
                 alignItems="center"
                 bg={cardBg}
                 rounded="lg"
-                color= {colorMode === 'dark' ? 'white' : 'black'}
+                color={colorMode === 'dark' ? 'white' : 'black'}
                 _hover={{}}
                 transition="margin-bottom 0.4s"
               >
@@ -295,7 +295,7 @@ const Portfolio = () => {
                   icon={isOpen ? <BsChevronUp /> : <BsChevronDown />}
                   size={"lg"}
                   variant="unstyled"
-                  color= {colorMode === 'dark' ? 'white' : 'black'}
+                  color={colorMode === 'dark' ? 'white' : 'black'}
                   aria-label="Toggle Sections"
                 />
               </Link>
@@ -317,7 +317,7 @@ const Portfolio = () => {
                         <Text ml={1} >
                           {skill.name}
                         </Text>
-                        <SkillBar level={skill.level}  />
+                        <SkillBar level={skill.level} />
                       </Flex>
                     ))}
                   </SimpleGrid>
@@ -338,7 +338,7 @@ const Portfolio = () => {
                         <Text ml={1} >
                           {skill.name}
                         </Text>
-                        <SkillBar level={skill.level}  />
+                        <SkillBar level={skill.level} />
                       </Flex>
                     ))}
                   </SimpleGrid>
@@ -356,7 +356,7 @@ const Portfolio = () => {
                         <Text ml={1} >
                           {skill.name}
                         </Text>
-                        <SkillBar level={skill.level}  />
+                        <SkillBar level={skill.level} />
                       </Flex>
                     ))}
                   </SimpleGrid>
@@ -374,7 +374,7 @@ const Portfolio = () => {
                         <Text ml={1} >
                           {skill.name}
                         </Text>
-                        <SkillBar level={skill.level}  />
+                        <SkillBar level={skill.level} />
                       </Flex>
                     ))}
                   </SimpleGrid>
@@ -382,7 +382,7 @@ const Portfolio = () => {
               </Collapse>
             </Box>
 
-              <WorkExperience />
+            <WorkExperience />
 
             <Box p={6} bg={cardBg} shadow="md" rounded="lg" _hover={{ shadow: shadowColor }}>
               <Heading as="h2" size="lg" mb={4}>Education</Heading>
@@ -428,7 +428,7 @@ const Portfolio = () => {
         )}
 
         {activeTab === 'projects' && (
-          <ProjectDetails colorMode={colorMode}/>
+          <ProjectDetails colorMode={colorMode} />
         )}
 
         {activeTab === 'contact' && (
@@ -467,7 +467,7 @@ const Portfolio = () => {
                 mr={4}
                 shadow={shadowColor}
                 _hover={{ bg: buttonHoverBg }} />
-              <CopyPhoneButton/>
+              <CopyPhoneButton />
               <IconButton
                 as="a"
                 href="https://x.com/prathikanand7"
