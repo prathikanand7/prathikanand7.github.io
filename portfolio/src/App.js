@@ -223,7 +223,7 @@ const Portfolio = () => {
                     />
                     <IconButton
                       as="a"
-                      href="/Prathik_Anand_nov_resume.pdf"
+                      href="/Prathik_Anand_dec_resume.pdf"
                       icon={<Download />}
                       aria-label="Download Resume"
                       variant="outline"
