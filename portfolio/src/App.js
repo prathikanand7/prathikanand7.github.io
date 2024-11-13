@@ -19,7 +19,7 @@ import {
   useToast,
 } from '@chakra-ui/react';
 import { BsSun as SunIcon, BsMoon as MoonIcon, BsChevronRight as ChevronRightIcon, BsSquareFill, BsSquareHalf, BsSquare, BsChevronDown, BsChevronUp } from 'react-icons/bs';
-import { Phone, Github, Linkedin, Mail, Twitter, Download } from 'lucide-react';
+import { Phone, Github, Linkedin, Mail, Twitter, Download, Youtube } from 'lucide-react';
 import WorkExperience from './components/WorkExperience';
 import ProjectDetails from './components/ProjectDetails';
 import AboutSection from './components/AboutSection';
@@ -184,7 +184,6 @@ const Portfolio = () => {
                   </Heading>
 
                   <Flex justify={{ base: "center", md: "flex-start" }} mb={6} wrap="wrap" >
-                    <CopyPhoneButton />
                     <IconButton
                       as="a"
                       href="mailto:prathikanand7@gmail.com"
@@ -197,11 +196,12 @@ const Portfolio = () => {
                       _hover={{ bg: buttonHoverBg }}
                       shadow={shadowColor}
                     />
+                    <CopyPhoneButton />
                     <IconButton
                       as="a"
-                      href="https://github.com/prathikanand7"
-                      icon={<Github />}
-                      aria-label="Github"
+                      href="https://www.linkedin.com/in/prathik-anand"
+                      icon={<Linkedin />}
+                      aria-label="Linkedin"
                       variant="outline"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -211,9 +211,9 @@ const Portfolio = () => {
                     />
                     <IconButton
                       as="a"
-                      href="https://www.linkedin.com/in/prathik-anand"
-                      icon={<Linkedin />}
-                      aria-label="Linkedin"
+                      href="https://github.com/prathikanand7"
+                      icon={<Github />}
+                      aria-label="Github"
                       variant="outline"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -437,14 +437,17 @@ const Portfolio = () => {
             <Flex justify="center" spacing={8}>
               <IconButton
                 as="a"
-                href="https://github.com/prathikanand7"
-                icon={<Github />}
-                aria-label="Github"
-                variant="outline" mr={4}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:prathikanand7@gmail.com"
+                icon={<Mail />}
+                aria-label="Mail"
+                variant="outline"
+                target="_blank" // Opens in a new tab
+                rel="noopener noreferrer" // Security measure when using target="_blank"
+                mr={4}
                 shadow={shadowColor}
-                _hover={{ bg: buttonHoverBg }} />
+                _hover={{ bg: buttonHoverBg }}
+              />
+              <CopyPhoneButton />
               <IconButton
                 as="a"
                 href="https://www.linkedin.com/in/prathik-anand"
@@ -455,19 +458,31 @@ const Portfolio = () => {
                 rel="noopener noreferrer"
                 mr={4}
                 shadow={shadowColor}
-                _hover={{ bg: buttonHoverBg }} />
+                _hover={{ bg: buttonHoverBg }}
+              />
               <IconButton
                 as="a"
-                href="mailto:prathikanand7@gmail.com"
-                icon={<Mail />}
-                aria-label="Mail"
-                variant="outline"
-                target="_blank" // Opens in a new tab
-                rel="noopener noreferrer" // Security measure when using target="_blank"
-                mr={4}
+                href="https://github.com/prathikanand7"
+                icon={<Github />}
+                aria-label="Github"
+                variant="outline" mr={4}
+                target="_blank"
+                rel="noopener noreferrer"
                 shadow={shadowColor}
-                _hover={{ bg: buttonHoverBg }} />
-              <CopyPhoneButton />
+                _hover={{ bg: buttonHoverBg }}
+              />
+              <IconButton
+                as="a"
+                href="https://www.youtube.com/@CodersGang"
+                icon={<Youtube />}
+                aria-label="Youtube"
+                variant="outline"
+                mr={4}
+                target="_blank"
+                rel="noopener noreferrer"
+                _hover={{ bg: buttonHoverBg }}
+                shadow={shadowColor}
+              />
               <IconButton
                 as="a"
                 href="https://x.com/prathikanand7"
@@ -478,7 +493,8 @@ const Portfolio = () => {
                 rel="noopener noreferrer"
                 mr={4}
                 shadow={shadowColor}
-                _hover={{ bg: buttonHoverBg }} />
+                _hover={{ bg: buttonHoverBg }}
+              />
             </Flex>
           </Box>
         )}

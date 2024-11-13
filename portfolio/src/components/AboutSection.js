@@ -11,12 +11,12 @@ import {
   IconButton,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Youtube } from 'lucide-react';
 
 const AboutSection = () => {
   // Define your colors based on the colorMode (if needed)
-  const cardTextColor = useColorModeValue( '#2e2e2e', 'whiteAlpha.900');
-  const buttonHoverBg = useColorModeValue( '#cbd5e0', 'whiteAlpha.200');
+  const cardTextColor = useColorModeValue('#2e2e2e', 'whiteAlpha.900');
+  const buttonHoverBg = useColorModeValue('#cbd5e0', 'whiteAlpha.200');
   const shadowColor = useColorModeValue('lg', 'dark-lg');
 
   return (
@@ -48,7 +48,7 @@ const AboutSection = () => {
           </Box>
 
           {/* Right: Profile picture and contact */}
-          <Box flex="1" textAlign="center"  mt={{ base: 6, md: 0 }} maxW={{ base: '100%', md: '320px' }}> {/* Add margin on top for mobile */}
+          <Box flex="1" textAlign="center" mt={{ base: 6, md: 0 }} maxW={{ base: '100%', md: '320px' }}> {/* Add margin on top for mobile */}
             <Image
               src="/my_pic.jpg"
               alt="Prathik Anand Krishnan"
@@ -66,6 +66,17 @@ const AboutSection = () => {
               mb={8}
               mt={{ base: 4, md: 20 }} // Adjust top margin for mobile
             >
+              <IconButton
+                as="a"
+                href="mailto:prathikanand7@gmail.com"
+                icon={<Mail />}
+                aria-label="Mail"
+                variant="outline"
+                _hover={{ bg: buttonHoverBg }}
+                shadow={shadowColor}
+                target="_blank"
+                rel="noopener noreferrer"
+              />
               <IconButton
                 as="a"
                 href="https://www.linkedin.com/in/prathik-anand"
@@ -90,9 +101,9 @@ const AboutSection = () => {
               />
               <IconButton
                 as="a"
-                href="mailto:prathikanand7@gmail.com"
-                icon={<Mail />}
-                aria-label="Mail"
+                href="https://www.youtube.com/@CodersGang"
+                icon={<Youtube />}
+                aria-label="Youtube"
                 variant="outline"
                 _hover={{ bg: buttonHoverBg }}
                 shadow={shadowColor}

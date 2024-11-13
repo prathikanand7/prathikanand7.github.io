@@ -43,12 +43,15 @@ const WorkExperience = () => {
           </Flex>
           <Collapse in={isOpenArup} animateOpacity>
             <Box mt={4} pl={6}>
-              <Text>• Worked on two C++ feature development for {' '} <Link href="https://www.oasys-software.com/products/gsa/suite/"  isExternal color="blue.600" fontWeight="bold" >Oasys - GSA</Link> - Finite Element Analysis and Design Software</Text>
-              <Text>• Worked on Backend C++ development for a high performance MFC application, implementing Custom UI features and successfully delivered 60+ JIRA tickets, enhancing overall application functionality and user experience. </Text>
-              <Text>• Utilized Test-Driven Development (TDD) with Catch2 and Google Test frameworks to design robust, reusable, and reliable code</Text>
+              <Text>• Worked on two C++ feature development for {' '} <Link href="https://www.oasys-software.com/products/gsa/suite/" isExternal color="blue.600" fontWeight="bold" >Oasys - GSA</Link> - Finite Element Analysis and Design Software</Text>
+              <Text>• Developed backend features for an MFC application in C++, implementing custom UI enhancements and resolving 60+ JIRA tickets. </Text>
+              <Text>• Implemented parallelization in the application to leverage maximum CPU cores in computing results using OpenMP’s API. </Text>
+              <Text>• Improved UI responsiveness by offloading resource-heavy operations to a separate std::thread, while using mutexes to preserve data integrity and thread safety.</Text>
+              <Text>• Applied Test-Driven Development (TDD) with Catch2 and Google Test frameworks, achieving 96% code coverage.</Text>
               <Text>• Developed the front-end for sidebars and dialog boxes using Vue, HTML/CSS, and JavaScript</Text>
               <Text>• Currently developing a C++ static library SDK to facilitate seamless integration and enhance interoperability between two proprietary applications.</Text>
-              <Text>• Leveraging the Abstract Factory Design Pattern to develop the SDK and streamlined its deployment as a NuGet package. Implemented the Steel Thread concept to ensure robust end-to-end system visualization and functionality</Text>
+              <Text>• Leveraging the Abstract Factory Design Pattern to develop the SDK and streamlined its deployment as a NuGet package.</Text>
+              <Text>• Implemented the Steel Thread concept to ensure robust end-to-end system visualization and functionality</Text>
             </Box>
           </Collapse>
         </Box>
@@ -57,12 +60,12 @@ const WorkExperience = () => {
         <Box>
           <Flex justify="space-between" align="center">
             <Box>
-                <Image
-                  src="/atkins.jpg"
-                  alt="ARUP"
-                  borderRadius="lg"
-                  boxSize="50px"
-                  objectFit="cover"
+              <Image
+                src="/atkins.jpg"
+                alt="ARUP"
+                borderRadius="lg"
+                boxSize="50px"
+                objectFit="cover"
                 mr={4}
               />
             </Box>
@@ -92,12 +95,12 @@ const WorkExperience = () => {
         <Box>
           <Flex justify="space-between" align="center">
             <Box>
-                <Image
-                  src="/infosys.jpg"
-                  alt="ARUP"
-                  borderRadius="lg"
-                  boxSize="50px"
-                  objectFit="cover"
+              <Image
+                src="/infosys.jpg"
+                alt="ARUP"
+                borderRadius="lg"
+                boxSize="50px"
+                objectFit="cover"
                 mr={4}
               />
             </Box>
