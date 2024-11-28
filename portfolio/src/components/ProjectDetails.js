@@ -38,7 +38,7 @@ const ProjectDetails = ({ colorMode }) => {
       href: 'https://github.com/prathikanand7/Quant-Finance-Tools/tree/main/VanillaVision_TwinPricingEngine',
       image: '/mc_pricer.jpg'
     },
-    {
+    /* {
       id: 2,
       title: 'Order Execution And Management System (OEMS) to trade on Deribit using C++17',
       description: `A YouTube video Demo on how to Automate your Crypto Trading using C++17! Step-by-Step Guide for Developer. This is a console application for order execution and management system to trade on Deribit Test (https://test.deribit.com/)`,
@@ -50,7 +50,7 @@ const ProjectDetails = ({ colorMode }) => {
       ],
       href: 'https://www.youtube.com/watch?v=BGOWIUk7ZSE',
       image: '/goQuant.jpg'
-    },
+    }, */
     {
       id: 6,
       title: 'ConcurrentCandle: Trading Orderbook Simulation Suite',
