@@ -28,7 +28,7 @@ const ProjectDetails = ({ colorMode }) => {
     {
       id: 1,
       title: 'VanillaVision: Twin Pricing Engine',
-      description: 'VanillaVision is a high-performance C++ application designed to compare the prices of European vanilla options using two distinct methods: the Black-Scholes analytical solution and Monte Carlo simulation.',
+      description: 'VanillaVision is a high-performance C++ application designed to compare the prices of European vanilla options using two distinct methods: the Black-Scholes analytical solution and Monte Carlo simulation',
       details: [
         'Utilized Modern C++ for developing the core logic of input parameters',
         'Implemented lock-free data structure for Twin pricing engine',
