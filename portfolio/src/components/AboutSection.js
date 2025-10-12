@@ -31,19 +31,19 @@ const AboutSection = () => {
           {/* Left: About details */}
           <Box flex="1" p={6} textAlign={{ base: 'center', md: 'left' }}> {/* Center text on mobile */}
             <Heading as="h3" size="xl" fontWeight="bold" mb={6}>
-              Hey, I'm Prathik. I live in Bangalore, where I work as a Software Developer.
+              Hey, I'm Prathik. I live in Amsterdam, Netherlands.
             </Heading>
             <Text color={cardTextColor} fontSize="lg" mb={6}>
-              Hey! I'm Prathik Anand, a passionate C++ Software Developer working in the structural industry.
+              Hey! I'm Prathik Anand, a skilled Backend Engineer with 2.5 years of experience in high-performance systems including FinTech.
               <br />
               <br />
-              Currently, I'm working at{' '}
-              <Link href="https://www.arup.com" isExternal color="blue.600" fontWeight="bold">
-                ARUP
-              </Link>, leveraging my skills in C++ to modernize and enhance API layers for Finite Element Analysis and Design.
+              Currently, I'm working as a Backend Engineer at{' '}
+              <Link href="https://goquant.io/" isExternal color="blue.600" fontWeight="bold">
+                GoQuant
+              </Link>, specializing in low-latency C++ trading system algorithms and real-time market data pipelines for both Centralized and Decentralized exchanges.
               <br />
               <br />
-              Besides my day-to-day work, I am driven by a passion for exploring the latest trends in tech, especially in the trading industry.
+              I have strong experience in Modern C++ (C++17), Python, and I'm currently learning Rust. I'm passionate about building robust, maintainable code and exploring the latest trends in high-frequency trading and blockchain technologies.
             </Text>
           </Box>
 

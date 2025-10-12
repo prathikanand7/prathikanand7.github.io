@@ -4,9 +4,9 @@ import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 
 const WorkExperience = () => {
   // States to control the collapse for each job
-  const [isOpenArup, setIsOpenArup] = useState(false);
-  const [isOpenAtkins, setIsOpenAtkins] = useState(false);
-  const [isOpenInfosys, setIsOpenInfosys] = useState(false);
+  const [isOpenGoQuant, setIsOpenGoQuant] = useState(false);
+  const [isOpenArupG3, setIsOpenArupG3] = useState(false);
+  const [isOpenArupG2, setIsOpenArupG2] = useState(false);
   const cardBg = useColorModeValue('#ECEAE5', 'rgba(31, 41, 55, 1)');
   const shadowColor = useColorModeValue('lg', 'dark-lg');
 
@@ -14,7 +14,48 @@ const WorkExperience = () => {
     <Box p={6} bg={cardBg} shadow="md" rounded="lg" _hover={{ shadow: shadowColor }}>
       <Heading as="h2" size="lg" mb={4}>Work Experience</Heading>
       <Stack spacing={4}>
-        {/* Job 1: ARUP */}
+        {/* Job 1: GoQuant */}
+        <Box>
+          <Flex justify="space-between" align="center">
+            <Box>
+              <Image
+                src="/goquantlogo.jpg"
+                alt="GoQuant"
+                borderRadius="lg"
+                boxSize="50px"
+                objectFit="cover"
+                mr={4}
+              />
+            </Box>
+            <Box>
+              <Heading as="h3" size="md" mb={2}>Backend Engineer</Heading>
+              <Text>GoQuant - Miami, FL, USA, Remote</Text>
+            </Box>
+            <Spacer />
+            <Text color="gray.500" mr={4}>10/2024 - Present</Text>
+            <IconButton
+              icon={isOpenGoQuant ? <BsChevronUp /> : <BsChevronDown />}
+              size={"sm"}
+              variant="ghost"
+              aria-label="Toggle GoQuant Details"
+              onClick={() => setIsOpenGoQuant(!isOpenGoQuant)}
+            />
+          </Flex>
+          <Collapse in={isOpenGoQuant} animateOpacity>
+            <Box mt={4} pl={6}>
+              <Text>• Designed and implemented a low-latency OEMS in C++17/Python, integrating REST and WebSocket endpoints for order execution and market data.</Text>
+              <Text>• Designed and integrated IOC, OCO, GTT and DAY order algorithms with asynchronous order monitoring and thread-safe updates using mutexes.</Text>
+              <Text>• Developed DEX adapters for Uniswap v4, Raydium, Orca and Hyperliquid enabling real-time trade execution, position tracking, and AMM simulations.</Text>
+              <Text>• Built off-chain AMM and Blockchain smart contract interaction layer for Uniswap v4 and Orca DEX, supporting on-chain swaps via off-chain transaction signing.</Text>
+              <Text>• Implemented WebSocket server (C++17, Drogon) for multi-client symbol subscriptions and live order book streaming.</Text>
+              <Text>• Utilized Flatbuffers for high-performance market-data serialization, reducing overall system latency.</Text>
+              <Text>• Developed automated builds and testing scripts using Meson, Conan, and Shell scripts achieving end-to-end CI/CD integration and pipeline automation.</Text>
+              <Text>• Enhanced testing reliability by using randomized seed unit tests in C++20 and PyTest for stress testing.</Text>
+            </Box>
+          </Collapse>
+        </Box>
+
+        {/* Job 2: ARUP */}
         <Box>
           <Flex justify="space-between" align="center">
             <Box>
@@ -24,44 +65,41 @@ const WorkExperience = () => {
                 borderRadius="lg"
                 boxSize="50px"
                 objectFit="cover"
-                mr={4} // Adjust the space between the image and text
+                mr={4}
               />
             </Box>
             <Box>
               <Heading as="h3" size="md" mb={2}>Software Developer (G3)</Heading>
-              <Text>ARUP</Text>
+              <Text>ARUP - Hyderabad, India</Text>
             </Box>
             <Spacer />
-            <Text color="gray.500" mr={4}>2022 - Present</Text>
+            <Text color="gray.500" mr={4}>04/2023 - 10/2024</Text>
             <IconButton
-              icon={isOpenArup ? <BsChevronUp /> : <BsChevronDown />}
+              icon={isOpenArupG3 ? <BsChevronUp /> : <BsChevronDown />}
               size={"sm"}
               variant="ghost"
-              aria-label="Toggle ARUP Details"
-              onClick={() => setIsOpenArup(!isOpenArup)}
+              aria-label="Toggle ARUP G3 Details"
+              onClick={() => setIsOpenArupG3(!isOpenArupG3)}
             />
           </Flex>
-          <Collapse in={isOpenArup} animateOpacity>
+          <Collapse in={isOpenArupG3} animateOpacity>
             <Box mt={4} pl={6}>
-              <Text>• Worked on two C++ feature development for {' '} <Link href="https://www.oasys-software.com/products/gsa/suite/" isExternal color="blue.600" fontWeight="bold" >Oasys - GSA</Link> - Finite Element Analysis and Design Software</Text>
-              <Text>• Developed backend features for an MFC application in C++, implementing custom UI enhancements and resolving 60+ JIRA tickets. </Text>
-              <Text>• Implemented parallelization in the application to leverage maximum CPU cores in computing results using OpenMP’s API. </Text>
-              <Text>• Improved UI responsiveness by offloading resource-heavy operations to a separate std::thread, while using mutexes to preserve data integrity and thread safety.</Text>
-              <Text>• Applied Test-Driven Development (TDD) with Catch2 and Google Test frameworks, achieving 96% code coverage.</Text>
-              <Text>• Developed the front-end for sidebars and dialog boxes using Vue, HTML/CSS, and JavaScript</Text>
-              <Text>• Currently developing a C++ static library SDK to facilitate seamless integration and enhance interoperability between two proprietary applications.</Text>
-              <Text>• Leveraging the Abstract Factory Design Pattern to develop the SDK and streamlined its deployment as a NuGet package.</Text>
-              <Text>• Implemented the Steel Thread concept to ensure robust end-to-end system visualization and functionality</Text>
+              <Text>• Developed a C++20 static library Adapter API using the Builder Pattern, deployed as a NuGet package for seamless integration between proprietary applications.</Text>
+              <Text>• Applied Test-Driven Development (TDD) using Google Test frameworks, achieving 96% code coverage in SDK and integrated SonarQube and CodeCov for continuous quality checks.</Text>
+              <Text>• Wrote Shell scripts for Azure Pipelines to automate build, deployment, and testing workflows.</Text>
+              <Text>• Created UML diagrams on MIRO boards for low-level and high-level system architecture visualization.</Text>
+              <Text>• Participated in pair programming and Tech-spikes to address technical debt.</Text>
+              <Text>• Built a PostHog-based event logging system via REST API, enabling real-time analytics and feature flag management within the application.</Text>
             </Box>
           </Collapse>
         </Box>
 
-        {/* Job 2: ATKINS */}
+        {/* Job 3: ARUP G2 */}
         <Box>
           <Flex justify="space-between" align="center">
             <Box>
               <Image
-                src="/atkins.jpg"
+                src="/arup.jpg"
                 alt="ARUP"
                 borderRadius="lg"
                 boxSize="50px"
@@ -70,58 +108,25 @@ const WorkExperience = () => {
               />
             </Box>
             <Box>
-              <Heading as="h3" size="md" mb={2}>Assistant Engineer</Heading>
-              <Text>ATKINS</Text>
+              <Heading as="h3" size="md" mb={2}>Software Developer (G2)</Heading>
+              <Text>ARUP - Hyderabad, India</Text>
             </Box>
             <Spacer />
-            <Text color="gray.500" mr={4}>2020 - 2022</Text>
+            <Text color="gray.500" mr={4}>11/2022 - 04/2023</Text>
             <IconButton
-              icon={isOpenAtkins ? <BsChevronUp /> : <BsChevronDown />}
+              icon={isOpenArupG2 ? <BsChevronUp /> : <BsChevronDown />}
               size={"sm"}
               variant="ghost"
-              aria-label="Toggle ATKINS Details"
-              onClick={() => setIsOpenAtkins(!isOpenAtkins)}
+              aria-label="Toggle ARUP G2 Details"
+              onClick={() => setIsOpenArupG2(!isOpenArupG2)}
             />
           </Flex>
-          <Collapse in={isOpenAtkins} animateOpacity>
+          <Collapse in={isOpenArupG2} animateOpacity>
             <Box mt={4} pl={6}>
-              <Text>• Python + Tkinter tool to draw, analyse, design and show results of Retaining Walls, had a adoption rate of 70%</Text>
-              <Text>• Astrid tool (HTML/CSS) - I was part of the QA/QC team, reported around 7 critical bugs and improved the UI</Text>
-              <Text>• RMS Project Management Interface PowerBI Tool - Improved overall project efficiency by 40%</Text>
-            </Box>
-          </Collapse>
-        </Box>
-        {/* Job 3: INFOSYS */}
-        <Box>
-          <Flex justify="space-between" align="center">
-            <Box>
-              <Image
-                src="/infosys.jpg"
-                alt="ARUP"
-                borderRadius="lg"
-                boxSize="50px"
-                objectFit="cover"
-                mr={4}
-              />
-            </Box>
-            <Box>
-              <Heading as="h3" size="md" mb={2}>Systems Engineer</Heading>
-              <Text>INFOSYS</Text>
-            </Box>
-            <Spacer />
-            <Text color="gray.500" mr={4}>Feb - Jul 2018</Text>
-            <IconButton
-              icon={isOpenInfosys ? <BsChevronUp /> : <BsChevronDown />}
-              size={"sm"}
-              variant="ghost"
-              aria-label="Toggle INFOSYS Details"
-              onClick={() => setIsOpenInfosys(!isOpenInfosys)}
-            />
-          </Flex>
-          <Collapse in={isOpenInfosys} animateOpacity>
-            <Box mt={4} pl={6}>
-              <Text>• Learnt Python, DSA, MySQL and did a mini project to build an e-commerce console application</Text>
-              <Text>• Learrnt basics of C#</Text>
+              <Text>• Improved UI responsiveness by offloading resource-heavy operations to a separate std::thread, while using mutexes to preserve data integrity and thread safety.</Text>
+              <Text>• Wrote units tests for code, achieving 86% code coverage for the project. Implemented hot-fixes and bug fixes identified during ensemble tests and black-box testing.</Text>
+              <Text>• Implemented MFC UI features and backend logics to effectively execute synchronization initiative.</Text>
+              <Text>• Hosted Monthly Software Development Meets (OSM) at ARUP, creating a platform for knowledge sharing and contributing to team's technical growth.</Text>
             </Box>
           </Collapse>
         </Box>

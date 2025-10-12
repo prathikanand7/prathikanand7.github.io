@@ -62,12 +62,12 @@ const Portfolio = () => {
     const toast = useToast(); // Initialize useToast hook
 
     const handleCopyPhoneNumber = () => {
-      navigator.clipboard.writeText("+91-9003939327"); // Copy phone number to clipboard
+      navigator.clipboard.writeText("+31-645882451"); // Copy phone number to clipboard
       toast({
         title: "Phone number copied.",
-        description: "+91-9003939327 has been copied to your clipboard.",
+        description: "+31-645882451 has been copied to your clipboard.",
         status: "success",
-        duration: 1500,
+        duration: 2000,
         isClosable: true,
         position: "bottom",
       });
@@ -180,7 +180,7 @@ const Portfolio = () => {
                     Prathik Anand Krishnan
                   </Heading>
                   <Heading as="h3" size="md" fontWeight="medium" mb={4}>
-                    C++ Software Developer
+                    C++ Backend Engineer
                   </Heading>
 
                   <Flex justify={{ base: "center", md: "flex-start" }} mb={6} wrap="wrap" >
@@ -237,17 +237,17 @@ const Portfolio = () => {
               </Flex>
               <Heading as="h2" size="lg" mb={4}>About Me</Heading>
               <Text color={cardTextColor}>
-                Hey there! I'm Prathik, a passionate C++ Software Developer with 2+ years of hands-on experience in crafting engineering solutions.
+                Hey there! I'm Prathik, a skilled Backend Engineer with 2.5 years of experience in high-performance systems including FinTech.
                 <br />
                 <br />
-                Currently, I'm making my mark at{' '}
-                <Link href="https://www.arup.com" isExternal color="blue.600" fontWeight="bold">
-                  ARUP
+                Currently, I'm working as a Backend Engineer at{' '}
+                <Link href="https://www.goquant.com" isExternal color="blue.600" fontWeight="bold">
+                  GoQuant
                 </Link>
-                , where I contribute to the development of Oasys Structural Suite. My work centers on developing the pre-processing and post-processing API layers for Finite Element Analysis and Design software.
+                , specializing in low-latency C++ trading system algorithms and real-time market data pipelines for both Centralized and Decentralized exchanges.
                 <br />
                 <br />
-                Beyond the office, I'm fueled by a great desire to engineer and learn more about the robust solutions that are applied in the trading industry to help push the boundaries.
+                I have strong experience in Modern C++ (C++17), Python, and I'm currently learning Rust. I'm passionate about building robust, maintainable code and exploring the latest trends in high-frequency trading and blockchain technologies.
               </Text>
             </Box>
 
@@ -258,14 +258,14 @@ const Portfolio = () => {
                 <Heading as="h3" size="md" mb={2}>Languages</Heading>
                 <SimpleGrid columns={{ sm: 1, md: 3 }} spacing={2}>
                   {[
-                    { name: 'C/C++', level: 4 },
-                    { name: 'Shell', level: 3 },
+                    { name: 'C++11/17', level: 4.5 },
+                    { name: 'Python', level: 4 },
+                    { name: 'Rust', level: 2 },
+                    { name: 'Shell Scripting', level: 3.5 },
                     { name: 'JavaScript', level: 3.5 },
-                    { name: 'Python', level: 3.5 },
-                    { name: 'MATLAB', level: 2 },
-                    { name: 'HTML/CSS', level: 4 },
+                    { name: 'HTML/CSS', level: 3.5 },
+                    { name: 'MATLAB', level: 2.5 },
                     { name: 'C#', level: 2 },
-                    { name: 'Assembly Language', level: 1.5 },
                   ].map((skill) => (
                     <Flex key={skill.name} justify="space-between" align="center" mr={10}>
                       <Text ml={1} >
@@ -305,13 +305,14 @@ const Portfolio = () => {
                   <Heading as="h3" size="md" mb={2}>Technologies/Frameworks</Heading>
                   <SimpleGrid columns={{ sm: 1, md: 3 }} spacing={2}>
                     {[
-                      { name: 'MFC', level: 3.5 },
                       { name: 'React', level: 4 },
-                      { name: 'Tailwind CSS', level: 3 },
-                      { name: 'Google Test', level: 3.5 },
                       { name: 'Vue', level: 3.5 },
-                      { name: 'Node.js', level: 4 },
-                      { name: 'Catch 2', level: 3.5 },
+                      { name: 'MFC', level: 3.5 },
+                      { name: 'Google Test', level: 4 },
+                      { name: 'Catch2', level: 3.5 },
+                      { name: 'PyTest', level: 3.5 },
+                      { name: 'Drogon', level: 3 },
+                      { name: 'Flatbuffers', level: 3 },
                     ].map((skill) => (
                       <Flex key={skill.name} justify="space-between" align="center" mr={10}>
                         <Text ml={1} >
@@ -329,10 +330,13 @@ const Portfolio = () => {
                     {[
                       { name: 'Git', level: 5 },
                       { name: 'Visual Studio', level: 4 },
-                      { name: 'Conda', level: 4 },
                       { name: 'VSCode', level: 4 },
-                      { name: 'Github', level: 4 },
-                      { name: 'Azure', level: 2.5 },
+                      { name: 'GCC', level: 4 },
+                      { name: 'MSVC', level: 4 },
+                      { name: 'Meson', level: 3.5 },
+                      { name: 'Conan', level: 3.5 },
+                      { name: 'Azure Pipelines', level: 3.5 },
+                      { name: 'JIRA', level: 4 },
                     ].map((skill) => (
                       <Flex key={skill.name} justify="space-between" align="center" mr={10}>
                         <Text ml={1} >
@@ -348,9 +352,9 @@ const Portfolio = () => {
                   <Heading as="h3" size="md" mb={2}>Databases</Heading>
                   <SimpleGrid columns={{ sm: 1, md: 3 }} spacing={2}>
                     {[
-                      { name: 'SQLite', level: 3 },
-                      { name: 'MongoDB', level: 3 },
-                      { name: 'SQL', level: 3 },
+                      { name: 'PostgreSQL', level: 3.5 },
+                      { name: 'Redis', level: 3.5 },
+                      { name: 'MySQL', level: 3 },
                     ].map((skill) => (
                       <Flex key={skill.name} justify="space-between" align="center" mr={10}>
                         <Text ml={1} >
@@ -363,12 +367,13 @@ const Portfolio = () => {
                 </Box>
 
                 <Box mb={10}>
-                  <Heading as="h3" size="md" mb={2}>Things I'm Learning</Heading>
+                  <Heading as="h3" size="md" mb={2}>Networking & Protocols</Heading>
                   <SimpleGrid columns={{ sm: 1, md: 3 }} spacing={2}>
                     {[
-                      { name: 'Low Latency Systems', level: 2.5 },
-                      { name: 'Quant Finance', level: 2 },
-                      { name: 'C#', level: 2 },
+                      { name: 'REST APIs', level: 4 },
+                      { name: 'WebSockets', level: 4 },
+                      { name: 'Proto-buffs', level: 3.5 },
+                      { name: 'JSON-RPC', level: 3.5 },
                     ].map((skill) => (
                       <Flex key={skill.name} justify="space-between" align="center" mr={10}>
                         <Text ml={1} >
@@ -388,8 +393,8 @@ const Portfolio = () => {
               <Heading as="h2" size="lg" mb={4}>Education</Heading>
               <Stack spacing={4}>
                 {[
-                  { degree: 'Master of Structural Engineering', school: 'BITS PILANI', year: '2018 - 2020' },
-                  { degree: 'Bachelor of Technology in Civil Engineering', school: 'Amrita Vishwa Vidyapeetham', year: '2013 - 2017' }
+                  { degree: 'Masters in Software Engineering', school: 'University of Amsterdam', year: '2025 - 2026' },
+                  { degree: 'Masters in Structural Engineering', school: 'BITS Pilani, India', year: '2018 - 2020 | 9.04 / 10.0' }
                 ].map((edu, index) => (
                   <Flex key={index} justify="space-between" align="center">
                     <Box>
@@ -410,7 +415,8 @@ const Portfolio = () => {
                   { name: 'Harvard CS50 - Free Computer Science University Course', issuer: 'FreeCodeCamp', link: 'https://www.freecodecamp.org/news/harvard-cs50/' },
                   { name: 'Version Control Systems', issuer: 'Coursera', link: 'https://www.coursera.org/account/accomplishments/verify/FNDCNZJD9Y4V' },
                   { name: 'Programming with JavaScript', issuer: 'Coursera', link: 'https://www.coursera.org/account/accomplishments/verify/M5LTN7J5LG3C' },
-                  { name: 'Advanced React', issuer: 'Coursera', link: 'https://www.coursera.org/account/accomplishments/verify/4VHQ5EM95NA3' },
+                  { name: 'Meta full-stack development with JavaScript and React', issuer: 'Coursera', link: 'https://www.coursera.org/account/accomplishments/verify/4VHQ5EM95NA3' },
+                  { name: 'Java Programming', issuer: 'Duke University - Coursera', link: 'https://www.coursera.org/account/accomplishments/verify/FNDCNZJD9Y4V' },
                 ].map((cert, index) => (
                   <Link key={index} href={cert.link} isExternal color="blue.600" _hover={{ textDecoration: 'underline' }}>
                     <Flex justify="space-between" align="center">
@@ -502,7 +508,7 @@ const Portfolio = () => {
 
       <Box as="footer" bg={cardBg} color={cardTextColor} shadow="md" py={6} mt={12}>
         <Container maxW="container.lg" textAlign="center">
-          © 2024 Prathik Anand Krishnan. All rights reserved.
+          © 2025 Prathik Anand Krishnan. All rights reserved.
         </Container>
       </Box>
     </Box>
