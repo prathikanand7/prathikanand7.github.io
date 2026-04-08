@@ -42,7 +42,7 @@ const SkillBar = ({ level }) => {
 
 const Portfolio = () => {
 
-  // Disclosure hook for toggling foldable boxes
+  // Disclosure hook for toggling foldable boxes 
   const { isOpen: isMenuOpen, onOpen: onMenuOpen, onClose: onMenuClose } = useDisclosure();
   const { isOpen, onToggle } = useDisclosure();
 
