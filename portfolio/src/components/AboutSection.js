@@ -34,7 +34,7 @@ const AboutSection = () => {
               Hey, I'm Prathik. I live in Amsterdam, Netherlands.
             </Heading>
             <Text color={cardTextColor} fontSize="lg" mb={6}>
-              Hey! I'm Prathik Anand, a skilled Backend Engineer with 2.5 years of experience in high-performance systems including FinTech.
+              Hey! I'm Prathik Anand, a skilled Backend Engineer with 3.5+ years of experience in high-performance systems including FinTech.
               <br />
               <br />
               Currently, I'm working as a Backend Engineer at{' '}

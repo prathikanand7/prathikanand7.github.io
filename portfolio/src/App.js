@@ -237,7 +237,7 @@ const Portfolio = () => {
               </Flex>
               <Heading as="h2" size="lg" mb={4}>About Me</Heading>
               <Text color={cardTextColor}>
-                Hey there! I'm Prathik, a skilled Backend Engineer with 2.5 years of experience in high-performance systems including FinTech.
+                Hey there! I'm Prathik, a skilled Backend Engineer with 3.5+ years of experience in high-performance systems including FinTech.
                 <br />
                 <br />
                 Currently, I'm working as a Backend Engineer at{' '}
